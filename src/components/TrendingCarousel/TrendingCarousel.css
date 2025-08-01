@@ -1,0 +1,160 @@
+.trending-section {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.trending-section:hover {
+  opacity: 1;
+}
+
+.trending-carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  padding: 0 20px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  scroll-padding: 0 20px;
+}
+
+.trending-carousel.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+.trending-carousel.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.trending-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.trending-carousel:active {
+  cursor: grabbing;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px 60px 10px 0;
+  min-width: max-content;
+}
+
+/* Carousel Items */
+.carousel-item {
+  flex-shrink: 0;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+
+.media-cover {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover .cover-image {
+  transform: scale(1.1);
+}
+
+.media-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-item:hover .media-overlay {
+  opacity: 1;
+}
+
+.play-hover {
+  color: white;
+  font-size: 48px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.play-hover:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .carousel-item {
+    width: 180px;
+  }
+  
+  .media-cover {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending-section {
+    margin-bottom: 30px;
+  }
+  
+  .trending-carousel {
+    padding: 0 15px;
+  }
+  
+  
+  .carousel-item {
+    width: 160px;
+  }
+  
+  .media-cover {
+    height: 220px;
+  }
+  
+  .carousel-container {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .carousel-item {
+    width: 140px;
+  }
+  
+  .media-cover {
+    height: 190px;
+  }
+  
+  .carousel-container {
+    gap: 10px;
+  }
+} 
